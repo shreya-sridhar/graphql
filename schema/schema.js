@@ -3,7 +3,8 @@ const _ = require('lodash')
 const {
     GraphQLObjectType,
     GraphQLInt,
-    GraphQLString
+    GraphQLString,
+    GraphQLSchema
 } = graphql 
 
 const User = [{id:'23',firstName:'Bill',age:20},{id:'47', firstName:'Samantha', age:21}]
@@ -30,7 +31,9 @@ const RootQuery = new GraphQLObjectType({
     }
 })
 
-
+module.exports = new GraphQLSchema({
+    query: RootQuery
+})
 
 
 
